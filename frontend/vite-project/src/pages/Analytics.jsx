@@ -45,8 +45,7 @@ const AnalyticsPage = ({ showToast }) => {
           <div>
             <p className="font-black text-white text-lg mb-2">Backend Not Connected</p>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Could not reach the analytics server at <span className="text-slate-300 font-mono text-xs">localhost:5000</span>.
-              Make sure the Flask backend is running.
+              Could not reach the analytics server. The backend might be waking up, please wait a moment and retry.
             </p>
           </div>
           <button

@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Loader, Calculator, Car, MapPin, Fuel, Gauge, Settings, Calendar, TrendingUp, AlertCircle, Download, Activity, TrendingDown, Minus } from 'lucide-react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'https://pakvaluai-backend.onrender.com/api';
+
 const PredictPage = ({ showToast }) => {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
@@ -309,7 +311,7 @@ const PredictPage = ({ showToast }) => {
     let mounted = true;
     const fetchOptions = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/feature-options');
+        const response = await fetch(`${API_BASE}/feature-options`);
         const data = await response.json();
         if (mounted) {
           setFeatureOptions(data.options);
@@ -329,7 +331,7 @@ const PredictPage = ({ showToast }) => {
   const fetchTrendData = async (predictedPrice) => {
     setLoadingTrend(true);
     try {
-      const response = await fetch('http://localhost:5000/api/price-trend', {
+      const response = await fetch(`${API_BASE}/price-trend`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -379,7 +381,7 @@ const PredictPage = ({ showToast }) => {
     setTrendMeta(null);
     
     try {
-      const response = await fetch('http://localhost:5000/api/predict', {
+      const response = await fetch(`${API_BASE}/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
