@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Background circle -->
+  <rect width="32" height="32" rx="8" fill="#0f172a"/>
+  
+  <!-- Gradient definitions -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Car body -->
+  <path d="M5 19 L7 13 L10 11 L22 11 L25 13 L27 19 Z" fill="url(#bodyGrad)" rx="2"/>
+
+  <!-- Car roof -->
+  <path d="M10 11 L12 7 L20 7 L22 11 Z" fill="url(#blueGrad)"/>
+
+  <!-- Windshield -->
+  <path d="M11.5 11 L13 8 L19 8 L20.5 11 Z" fill="#0f172a" opacity="0.6"/>
+
+  <!-- Windows -->
+  <rect x="12.5" y="7.5" width="3" height="3" rx="0.5" fill="#93c5fd" opacity="0.5"/>
+  <rect x="16.5" y="7.5" width="3" height="3" rx="0.5" fill="#93c5fd" opacity="0.5"/>
+
+  <!-- Wheels -->
+  <circle cx="10" cy="20" r="3" fill="#1e293b" stroke="url(#blueGrad)" stroke-width="1.5"/>
+  <circle cx="10" cy="20" r="1.2" fill="#3b82f6"/>
+  <circle cx="22" cy="20" r="3" fill="#1e293b" stroke="url(#blueGrad)" stroke-width="1.5"/>
+  <circle cx="22" cy="20" r="1.2" fill="#3b82f6"/>
+
+  <!-- Undercarriage -->
+  <rect x="5" y="18.5" width="22" height="2" rx="1" fill="#1d4ed8"/>
+
+  <!-- AI spark / price tag on top right -->
+  <circle cx="26" cy="6" r="4" fill="#0f172a"/>
+  <text x="26" y="9" text-anchor="middle" font-size="5" font-weight="bold" font-family="Arial" fill="url(#blueGrad)">₨</text>
+</svg>
